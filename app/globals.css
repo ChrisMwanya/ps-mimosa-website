@@ -1,26 +1,80 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  
+  --color-brand-rich-black: #00072d;
+  --color-brand-dark-blue: #051650;
+  --color-brand-medium-blue: #0a2472;
+  --color-brand-blue: #123499;
+
+  --font-sans: var(--font-jakarta-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #f8fafc;
+  --foreground: #00072d;
+  
+  /* Primary: Caribbean Green (Brand Blue) */
+  --primary: #123499; 
+  --primary-foreground: #ffffff;
+  
+  /* Secondary */
+  --secondary: #e2e8f0;
+  --secondary-foreground: #00072d;
+  
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  
+  /* Accent: Bangladesh Green (Medium Blue) */
+  --accent: #0a2472;
+  --accent-foreground: #ffffff;
+}
+
+.dark {
+  --background: #00072d; /* Rich Black */
+  --foreground: #f8fafc;
+  
+  --primary: #123499; 
+  --primary-foreground: #ffffff;
+  
+  --secondary: #051650; /* Dark Blue */
+  --secondary-foreground: #f8fafc;
+  
+  --muted: #051650; 
+  --muted-foreground: #94a3b8;
+  
+  --accent: #0a2472; 
+  --accent-foreground: #ffffff;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--muted-foreground);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
 }
