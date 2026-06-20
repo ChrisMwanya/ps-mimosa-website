@@ -1,5 +1,6 @@
 import HeroSection from "@/components/sections/HeroSection";
-import JesusSection from "@/components/sections/JesusSection";
+import DiscoverSection from "@/components/sections/DiscoverSection";
+import ConnectEventsSection from "@/components/sections/ConnectEventsSection";
 import CommunitySection from "@/components/sections/CommunitySection";
 import WorshipInfo from "@/components/sections/WorshipInfo";
 import SermonsSection from "@/components/sections/SermonsSection";
@@ -12,7 +13,8 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <JesusSection />
+      <DiscoverSection />
+      <ConnectEventsSection />
       <CommunitySection />
       <WorshipInfo />
       <SermonsSection />
