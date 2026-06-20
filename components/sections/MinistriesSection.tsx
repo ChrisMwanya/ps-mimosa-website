@@ -1,65 +1,111 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { ChevronRight, Flame, Heart, Smile, Music, HandHeart } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const ministries = [
   {
-    title: "Enfants",
-    description: "Un espace sécurisé et joyeux où vos enfants apprennent à connaître Jésus à leur niveau.",
-    image: "https://images.unsplash.com/photo-1540479859555-17af45c78602?q=80&w=2070&auto=format&fit=crop",
+    id: "jeunes",
+    label: "Programme des Jeunes",
+    title: "Développer une jeunesse qui influence la culture.",
+    link: "#",
+    className: "bg-primary text-primary-foreground col-span-1",
+    icon: Flame,
   },
   {
-    title: "Jeunes",
-    description: "Une communauté vibrante pour les ados et jeunes adultes, centrée sur l'identité en Christ.",
-    image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=2070&auto=format&fit=crop",
+    id: "femmes",
+    label: "Programme des Femmes",
+    title: "Bâtir une communauté authentique. Approfondir sa foi.",
+    link: "#",
+    className: "bg-accent text-accent-foreground col-span-1",
+    icon: Heart,
   },
   {
-    title: "Femmes",
-    description: "Des rencontres pour s'encourager, prier et grandir ensemble dans la foi.",
-    image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2069&auto=format&fit=crop",
+    id: "enfants",
+    label: "Programme des Enfants",
+    title: "En partenariat avec les parents pour développer la foi.",
+    link: "#",
+    className: "bg-secondary text-secondary-foreground col-span-1",
+    icon: Smile,
   },
   {
-    title: "Hommes",
-    description: "Bâtir des hommes forts, des pères responsables et des leaders selon le cœur de Dieu.",
-    image: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=2070&auto=format&fit=crop",
+    id: "adoration",
+    label: "Ministère d'Adoration",
+    title: "Inspirer votre foi et créer une atmosphère d'adoration envers Dieu.",
+    link: "#",
+    className: "bg-foreground text-background col-span-1 md:col-span-2 min-h-[300px] md:min-h-[350px]",
+    icon: Music,
+  },
+  {
+    id: "priere",
+    label: "Ministère de Prière",
+    title: "Rechercher la face de Dieu et intercéder pour l'église.",
+    link: "#",
+    className: "bg-muted text-foreground col-span-1 md:col-span-1 min-h-[300px] md:min-h-[350px]",
+    icon: HandHeart,
   }
 ];
 
 export default function MinistriesSection() {
   return (
-    <section id="ministeres" className="py-24 bg-secondary">
+    <section id="ministeres" className="py-24 bg-background text-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-foreground tracking-tight">Nos Ministères</h2>
-          <p className="text-lg text-secondary-foreground/80">
-            Il y a une place pour chacun à Parole du Salut. Découvrez comment vous impliquer et grandir avec des personnes qui partagent votre étape de vie.
-          </p>
+        <div className="text-center mb-16">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-5xl font-bold mb-4 tracking-tight"
+          >
+            Une place pour vous et votre famille
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-lg text-muted-foreground max-w-2xl mx-auto"
+          >
+            Rejoignez nos petits groupes, impliquez-vous et découvrez des moyens pour toute votre famille de grandir dans la foi.
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {ministries.map((ministry, index) => (
             <motion.div
-              key={index}
+              key={ministry.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative h-80 rounded-3xl overflow-hidden cursor-pointer"
+              transition={{ delay: index * 0.1 }}
+              className={cn(
+                "relative rounded-3xl p-8 md:p-10 overflow-hidden flex flex-col justify-between group min-h-[320px]",
+                ministry.className
+              )}
             >
-              <div 
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                style={{ backgroundImage: `url('${ministry.image}')` }}
+              {/* Background Watermark Icon */}
+              <ministry.icon 
+                className="absolute -right-8 -bottom-8 w-64 h-64 opacity-[0.05] transform group-hover:scale-110 transition-transform duration-700 pointer-events-none" 
+                strokeWidth={1}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-8 transition-colors group-hover:from-black/90">
-                <h3 className="text-2xl font-bold text-white mb-2">{ministry.title}</h3>
-                <p className="text-white/80 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">
-                  {ministry.description}
+              
+              <div className="relative z-10">
+                <p className="text-xs md:text-sm font-medium mb-4 opacity-80 tracking-wider uppercase">
+                  {ministry.label}
                 </p>
-                <div className="flex items-center text-primary font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0">
-                  En savoir plus <ArrowRight size={16} className="ml-2" />
-                </div>
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight max-w-[95%] md:max-w-[85%] leading-tight">
+                  {ministry.title}
+                </h3>
               </div>
+
+              <Link 
+                href={ministry.link}
+                className="relative z-10 inline-flex items-center text-sm font-bold hover:opacity-80 transition-opacity mt-12 w-fit group/btn"
+              >
+                En savoir plus <ChevronRight size={16} className="ml-1 group-hover/btn:translate-x-1 transition-transform" />
+              </Link>
             </motion.div>
           ))}
         </div>
