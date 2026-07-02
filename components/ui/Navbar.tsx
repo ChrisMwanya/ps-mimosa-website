@@ -17,11 +17,11 @@ export default function Navbar() {
   });
 
   const links = [
-    { name: "Prédications", href: "#messages" },
-    { name: "Ministères", href: "#ministeres" },
-    { name: "Jésus", href: "#jesus" },
-    { name: "PS Mimosas", href: "#about" },
-    { name: "Contacts", href: "#footer" },
+    { name: "Prédications", href: "/predication" },
+    { name: "Ministères", href: "/#ministeres" },
+    { name: "Jésus", href: "/#jesus" },
+    { name: "PS Mimosas", href: "/#about" },
+    { name: "Contacts", href: "/#footer" },
   ];
 
   return (
