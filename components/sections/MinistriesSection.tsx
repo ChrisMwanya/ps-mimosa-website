@@ -5,48 +5,7 @@ import Link from "next/link";
 import { ChevronRight, Flame, Heart, Smile, Music, HandHeart } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const ministries = [
-  {
-    id: "jeunes",
-    label: "Programme des Jeunes",
-    title: "Développer une jeunesse qui influence la culture.",
-    link: "#",
-    className: "bg-primary text-primary-foreground col-span-1",
-    icon: Flame,
-  },
-  {
-    id: "femmes",
-    label: "Programme des Femmes",
-    title: "Bâtir une communauté authentique. Approfondir sa foi.",
-    link: "#",
-    className: "bg-accent text-accent-foreground col-span-1",
-    icon: Heart,
-  },
-  {
-    id: "enfants",
-    label: "Programme des Enfants",
-    title: "En partenariat avec les parents pour développer la foi.",
-    link: "#",
-    className: "bg-secondary text-secondary-foreground col-span-1",
-    icon: Smile,
-  },
-  {
-    id: "adoration",
-    label: "Ministère d'Adoration",
-    title: "Inspirer votre foi et créer une atmosphère d'adoration envers Dieu.",
-    link: "#",
-    className: "bg-foreground text-background col-span-1 md:col-span-2 min-h-[300px] md:min-h-[350px]",
-    icon: Music,
-  },
-  {
-    id: "priere",
-    label: "Ministère de Prière",
-    title: "Rechercher la face de Dieu et intercéder pour l'église.",
-    link: "#",
-    className: "bg-muted text-foreground col-span-1 md:col-span-1 min-h-[300px] md:min-h-[350px]",
-    icon: HandHeart,
-  }
-];
+import { ministries } from "@/lib/data/ministries";
 
 export default function MinistriesSection() {
   return (
@@ -101,7 +60,7 @@ export default function MinistriesSection() {
               </div>
 
               <Link 
-                href={ministry.link}
+                href={`/ministeres/${ministry.id}`}
                 className="relative z-10 inline-flex items-center text-sm font-bold hover:opacity-80 transition-opacity mt-12 w-fit group/btn"
               >
                 En savoir plus <ChevronRight size={16} className="ml-1 group-hover/btn:translate-x-1 transition-transform" />
