@@ -20,8 +20,8 @@ export default function Navbar() {
     { name: "Prédications", href: "/predication" },
     { name: "Ministères", href: "/ministeres" },
     { name: "Jésus", href: "/jesus" },
-    { name: "PS Mimosas", href: "/#about" },
-    { name: "Contacts", href: "/#footer" },
+    { name: "PS Mimosas", href: "/a-propos" },
+    { name: "Contacts", href: "/contact" },
   ];
 
   return (

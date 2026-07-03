@@ -44,11 +44,11 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2 md:pl-4">
             <h3 className="font-bold text-xl mb-6 tracking-tight">Liens Rapides</h3>
             <ul className="space-y-4">
-              <li><Link href="#about" className="text-white/80 hover:text-white hover:translate-x-1 inline-block transition-all">À propos de nous</Link></li>
-              <li><Link href="#jesus" className="text-white/80 hover:text-white hover:translate-x-1 inline-block transition-all">Connaître Jésus</Link></li>
-              <li><Link href="#ministeres" className="text-white/80 hover:text-white hover:translate-x-1 inline-block transition-all">Nos ministères</Link></li>
-              <li><Link href="#evenements" className="text-white/80 hover:text-white hover:translate-x-1 inline-block transition-all">Événements</Link></li>
-              <li><Link href="#donner" className="text-white/80 hover:text-white hover:translate-x-1 inline-block transition-all">Donner</Link></li>
+              <li><Link href="/a-propos" className="text-white/80 hover:text-white hover:translate-x-1 inline-block transition-all">À propos de nous</Link></li>
+              <li><Link href="/pasteurs" className="text-white/80 hover:text-white hover:translate-x-1 inline-block transition-all">Nos pasteurs</Link></li>
+              <li><Link href="/jesus" className="text-white/80 hover:text-white hover:translate-x-1 inline-block transition-all">Connaître Jésus</Link></li>
+              <li><Link href="/ministeres" className="text-white/80 hover:text-white hover:translate-x-1 inline-block transition-all">Nos ministères</Link></li>
+              <li><Link href="/contact" className="text-white/80 hover:text-white hover:translate-x-1 inline-block transition-all">Nous contacter</Link></li>
             </ul>
           </div>
 

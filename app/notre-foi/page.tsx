@@ -430,7 +430,7 @@ export default function NotreFoiPage() {
                 Découvrir Jésus <ArrowRight size={18} />
               </Link>
               <Link
-                href="/#footer"
+                href="/contact"
                 className="flex items-center justify-center gap-2 px-8 py-4 bg-background text-foreground font-bold rounded-full shadow-sm border border-border hover:bg-secondary/80 transition-all hover:-translate-y-1"
               >
                 Nous contacter
