@@ -10,7 +10,7 @@ const options = [
     description: "Découvrez notre confession de foi et les fondements bibliques de notre église.",
     icon: <BookOpen size={24} />,
     linkText: "Notre foi",
-    href: "/croyances",
+    href: "/notre-foi",
   },
   {
     title: "Donner votre vie à Jésus",
